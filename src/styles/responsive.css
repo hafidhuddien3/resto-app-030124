@@ -1,0 +1,102 @@
+@media screen and (max-width: 550px) {
+  .nav {
+    z-index: 10;
+    background-color: #fff;
+    width: 300px;
+    position: absolute;
+
+    -webkit-transform: translate(-300px, +140px);
+    transform: translate(-300px, +140px);
+
+    /* Optionally, we animate the drawer. */
+    transition: transform 0.3s ease;
+    display: none;
+  }
+
+  .open {
+    display: block;
+    -webkit-transform: translate(0, +140px);
+    transform: translate(0, +140px);
+
+    /* Optionally, we animate the drawer. */
+    transition: transform 0.3s ease;
+  }
+
+  .nav__item {
+    display: list-item;
+    border-bottom: 1px solid #e0e0e0;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #restoRow {
+    grid-template-columns: auto;
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .header__menu {
+    display: none;
+  }
+  #restoRow {
+    grid-template-columns: auto;
+  }
+
+}
+
+@media screen and (min-width: 650px) {
+  #restoRow {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  #restoRow {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .nav__list {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  #restoRow {
+    grid-template-columns: auto auto auto;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  #restoRow {
+    grid-template-columns: auto auto auto;
+  }
+  #detailRestaurant {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  #detailRestaurant .item {
+    margin: 10px;
+    align-self: flex-start;
+  }
+  #detailRestaurant li {
+    max-width: 470px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  main {
+    max-width: 1200px;
+  }
+  .hero {
+    margin: auto;
+    width: 1000px;
+  }
+  #restoRow {
+    grid-template-columns: auto auto auto auto;
+  }
+  #detailRestaurant li {
+    max-width: 750px;
+  }
+}
