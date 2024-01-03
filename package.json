@@ -14,7 +14,8 @@
     "lint-fix": "eslint ./src --fix",
     "e2e": "codeceptjs run --steps",
     "e2eShort": "codeceptjs run",
-    "build": "webpack --config webpack.prod.js",
+    "build": "webpack --config webpack.prod.js && node sharp.js",
+    "build-webpack": "webpack --config webpack.prod.js",
     "build-image": "node sharp.js",
     "start": "node server.js"
   },
