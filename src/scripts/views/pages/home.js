@@ -8,7 +8,7 @@ const Home = {
 
       <picture>
       <source media="(max-width: 600px)" srcset="./images/heros/hero-image_2-small.jpg">
-      <source srcset="./images/heros/hero-image_2-large.jpg">
+      <source srcset="./images/heros/hero-image_2.jpg">
       <img src='./images/heros/hero-image_2.jpg' 
            alt="hero image">
     </picture>
