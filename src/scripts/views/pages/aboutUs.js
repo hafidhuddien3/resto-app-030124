@@ -1,5 +1,5 @@
 const AboutUs = {
-  async render () {
+  async render() {
     return `
       <h1>About Us</h1>
       <br />
@@ -48,17 +48,17 @@ const AboutUs = {
       </p>
       <br />
       <a href="https://github.com/hafidhuddien3">Github Account</a>
-    `
+    `;
   },
 
-  async afterRender () {
-    await this._initialData()
-    this._initialListener()
+  async afterRender() {
+    await this._initialData();
+    this._initialListener();
   },
 
-  _initialListener () {},
+  _initialListener() {},
 
-  async _initialData () {}
-}
+  async _initialData() {},
+};
 
-export default AboutUs
+export default AboutUs;

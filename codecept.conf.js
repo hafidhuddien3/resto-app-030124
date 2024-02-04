@@ -1,32 +1,32 @@
-const { setHeadlessWhen, setCommonPlugins } = require('@codeceptjs/configure')
+const { setHeadlessWhen, setCommonPlugins } = require("@codeceptjs/configure");
 // turn on headless mode when running with HEADLESS=true environment variable
 // export HEADLESS=true && npx codeceptjs run
-setHeadlessWhen(process.env.HEADLESS)
+setHeadlessWhen(process.env.HEADLESS);
 
 // enable all common plugins https://github.com/codeceptjs/configure#setcommonplugins
-setCommonPlugins()
+setCommonPlugins();
 
 /** @type {CodeceptJS.MainConfig} */
 exports.config = {
-  tests: 'e2e/**/*.test.js',
-  output: 'e2e/output',
+  tests: "e2e/**/*.test.js",
+  output: "e2e/output",
   helpers: {
     Playwright: {
-      browser: 'firefox',
-      url: 'http://localhost:8080',
-      show: true
-    }
+      browser: "firefox",
+      url: "http://localhost:8080",
+      show: true,
+    },
   },
   include: {
-    I: './steps_file.js'
+    I: "./steps_file.js",
   },
-  name: 'restaurant-catalogue-pushnotif-for-e2e-demo',
+  name: "restaurant-catalogue-pushnotif-for-e2e-demo",
   plugins: {
     retryFailedStep: {
-      enabled: true
+      enabled: true,
     },
     screenshotOnFail: {
-      enabled: true
-    }
-  }
-}
+      enabled: true,
+    },
+  },
+};

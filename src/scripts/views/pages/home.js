@@ -1,8 +1,8 @@
-import Restaurants from '../../data/restaurantdb-source'
-import { createRestaurantItemTemplate } from '../templates/template-creator'
+import Restaurants from "../../data/restaurantdb-source";
+import { createRestaurantItemTemplate } from "../templates/template-creator";
 
 const Home = {
-  async render () {
+  async render() {
     return `
       <div class="hero">
 
@@ -22,45 +22,45 @@ const Home = {
 
     <!-- resto -->
     <div class="" id="restoRow"></div>
-    `
+    `;
   },
 
-  async afterRender () {
-    await this._initialData()
-    this._initialListener()
+  async afterRender() {
+    await this._initialData();
+    this._initialListener();
   },
 
-  _initialListener () {},
+  _initialListener() {},
 
-  async _initialData () {
+  async _initialData() {
     try {
-      const fetchRestaurants = await Restaurants.getList()
-      const responseRestaurants = await fetchRestaurants.json()
-      this._restaurants = responseRestaurants.restaurants
-      this._populateRestaurantsToGrid(this._restaurants)
+      const fetchRestaurants = await Restaurants.getList();
+      const responseRestaurants = await fetchRestaurants.json();
+      this._restaurants = responseRestaurants.restaurants;
+      this._populateRestaurantsToGrid(this._restaurants);
     } catch (error) {
-      console.error(error)
+      console.error(error);
     }
   },
 
-  _populateRestaurantsToGrid (restaurantList = null) {
-    if (!(typeof restaurantList === 'object')) {
+  _populateRestaurantsToGrid(restaurantList = null) {
+    if (!(typeof restaurantList === "object")) {
       throw new Error(
-        `Parameter List should be an object. The value is ${restaurantList}`
-      )
+        `Parameter List should be an object. The value is ${restaurantList}`,
+      );
     }
     if (!Array.isArray(restaurantList)) {
       throw new Error(
-        `Parameter List should be an array. The value is ${restaurantList}`
-      )
+        `Parameter List should be an array. The value is ${restaurantList}`,
+      );
     }
-    const restaurantRow = document.querySelector('#restoRow')
+    const restaurantRow = document.querySelector("#restoRow");
     restaurantList.forEach((item, index) => {
       restaurantRow.innerHTML += createRestaurantItemTemplate(
-        restaurantList[index]
-      )
-    })
-  }
-}
+        restaurantList[index],
+      );
+    });
+  },
+};
 
-export default Home
+export default Home;

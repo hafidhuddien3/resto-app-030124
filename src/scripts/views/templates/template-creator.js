@@ -4,9 +4,9 @@ const createRestaurantItemTemplate = (data) => {
   return `
   <div class="card restaurant_item"><a href="/#/detail/${data.id}">
   <div class="top-left">Kota: ${data.city}</div>
-<img class="lazyload" data-src="${ApiEndpoint.SMALL_IMAGE(data.pictureId)}" alt="${
-    data.name
-  } image" style="width:100%" crossorigin="anonymous">
+<img class="lazyload" data-src="${ApiEndpoint.SMALL_IMAGE(
+    data.pictureId
+  )}" alt="${data.name} image" style="width:100%" crossorigin="anonymous">
 <div class="container">
   <h4 class="restaurant_title">Restaurant ${data.name}</h4>
   Rating: ${data.rating}
@@ -51,6 +51,17 @@ const createRestaurantDetailTemplate = (restaurant) => `
   <div id="likeButtonContainer"></div><br>
   <h3>Customer Reviews</h3>
   <p id="ul"></p><br>
+
+  <p class="p-center">Add Review</p>
+  <form id="addReview">
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" name="name" value="Guest"><br>
+  <label for="review">Review:</label><br>
+  <textarea id="review" name="review" >Saya suka dekorasinya
+  </textarea><br><br>
+  <input type="submit" value="Submit">
+</form>
+
   </aside>
 `
 

@@ -30,7 +30,7 @@ const Restaurants = {
       body: JSON.stringify({ id, name, review })
     })
     const responseJson = await response.json()
-    return responseJson.restaurant
+    return responseJson.customerReviews
   }
 }
 
