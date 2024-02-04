@@ -1,6 +1,7 @@
 import UrlParser from '../../routes/url-parser'
 import { createRestaurantDetailTemplate } from '../templates/template-creator'
 import LikeButtonInitiator from '../../utils/like-button-initiator'
+import AddReviewInitiator from '../../utils/add-review-initiator'
 import Restaurants from '../../data/restaurantdb-source'
 
 const Detail = {
@@ -20,6 +21,7 @@ const Detail = {
 
     function makeList (array) {
       const list = document.getElementById('ul')
+      list.innerHTML = ''
       for (let i = 0; i < array.length; ++i) {
         const li = document.createElement('li')
         const obj = array[i]
@@ -37,10 +39,14 @@ const Detail = {
 
     makeList(restaurant.customerReviews)
 
+    console.log('restaurant.customerReviews', restaurant.customerReviews)
+
     LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
       restaurant
     })
+
+    AddReviewInitiator.init({ restoId: url.id, makeList })
   }
 }
 
